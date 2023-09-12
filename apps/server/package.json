@@ -1,0 +1,12 @@
+{
+  "name": "@treehole-rt/server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "devDependencies": {
+    "tsx": "^3.12.8"
+  },
+  "dependencies": {
+    "socket.io": "^4.7.2"
+  }
+}
