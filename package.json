@@ -2,6 +2,7 @@
   "name": "@treehole-rt/workspace",
   "private": true,
   "version": "0.0.0",
+  "packageManager": "yarn@3.6.0",
   "workspaces": {
     "packages": [
       "apps/*"
