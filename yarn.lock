@@ -560,6 +560,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@treehole-rt/frontend@workspace:apps/frontend":
+  version: 0.0.0-use.local
+  resolution: "@treehole-rt/frontend@workspace:apps/frontend"
+  dependencies:
+    "@mdi/font": ^7.2.96
+    "@types/markdown-it": ^13.0.1
+    "@vitejs/plugin-vue": ^4.2.3
+    "@vueuse/core": ^10.4.1
+    "@wooorm/starry-night": ^2.1.1
+    github-markdown-css: ^5.2.0
+    hast-util-to-html: ^9.0.0
+    markdown-it: ^13.0.1
+    socket.io-client: ^4.7.2
+    typescript: ^5.0.2
+    unocss: ^0.55.7
+    vite: ^4.4.5
+    vite-plugin-vuetify: ^1.0.2
+    vscode-oniguruma: 1
+    vue: ^3.3.4
+    vue-router: ^4.2.4
+    vue-tsc: ^1.8.5
+    vuetify: ^3.3.15
+  languageName: unknown
+  linkType: soft
+
 "@treehole-rt/server@workspace:apps/server":
   version: 0.0.0-use.local
   resolution: "@treehole-rt/server@workspace:apps/server"
@@ -2559,31 +2584,6 @@ __metadata:
   checksum: 01135bf8675f9d5c61ff18e2e2932f719ca4de964e3be90ef4c36aacfc7b9cb2fceb5eca0b7e0190e3383fe51c5b37f4cb80b62ca06a99aaabfcfd6ac7c9328c
   languageName: node
   linkType: hard
-
-"frontend@workspace:apps/frontend":
-  version: 0.0.0-use.local
-  resolution: "frontend@workspace:apps/frontend"
-  dependencies:
-    "@mdi/font": ^7.2.96
-    "@types/markdown-it": ^13.0.1
-    "@vitejs/plugin-vue": ^4.2.3
-    "@vueuse/core": ^10.4.1
-    "@wooorm/starry-night": ^2.1.1
-    github-markdown-css: ^5.2.0
-    hast-util-to-html: ^9.0.0
-    markdown-it: ^13.0.1
-    socket.io-client: ^4.7.2
-    typescript: ^5.0.2
-    unocss: ^0.55.7
-    vite: ^4.4.5
-    vite-plugin-vuetify: ^1.0.2
-    vscode-oniguruma: 1
-    vue: ^3.3.4
-    vue-router: ^4.2.4
-    vue-tsc: ^1.8.5
-    vuetify: ^3.3.15
-  languageName: unknown
-  linkType: soft
 
 "fs-extra@npm:^10.0.0, fs-extra@npm:^10.1.0":
   version: 10.1.0
