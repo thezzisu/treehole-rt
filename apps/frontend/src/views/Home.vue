@@ -8,7 +8,7 @@
       <VCardActions>
         <VBtn text="Join" color="primary" variant="flat" @click="join" />
         <VBtn text="Join (as Admin)" :disabled="!token" @click="joinAsAdmin" />
-        <VBtn text="Projector" :disabled="!token" @click="projector" />
+        <VBtn text="Projector" :disabled="true" @click="projector" />
       </VCardActions>
     </VCard>
   </div>

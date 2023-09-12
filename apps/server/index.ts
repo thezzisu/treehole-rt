@@ -18,7 +18,7 @@ const isValidType = (type: any): type is SocketType => {
 
 interface IChatroom {
   size: number
-  messages: { sender: number; ts: number; message: string }[]
+  messages: { sender: number; ts: number; message: string; d: boolean }[]
 }
 
 const chatrooms = new Map<string, IChatroom>()
@@ -65,7 +65,7 @@ io.on('connection', (socket) => {
       // One message per second
       if (now - last < 1000) return
     }
-    const msg = { sender, ts: now, message }
+    const msg = { sender, ts: now, message, d: false }
     chatroom.messages.push(msg)
     io.to(chatroomId).emit('message', [msg])
   }
@@ -77,5 +77,14 @@ io.on('connection', (socket) => {
 
   socket.on('getChatroomSenderId', (cb) => {
     cb({ id: sender })
+  })
+
+  socket.on('edit', (id, msg) => {
+    if (typeof id !== 'number' || typeof msg !== 'string') return
+    if (id < 0 || id >= chatroom.messages.length) return
+    if (chatroom.messages[id].sender !== sender && type !== 'admin') return
+    chatroom.messages[id].message = msg
+    chatroom.messages[id].d = true
+    io.to(chatroomId).emit('edit', id, msg)
   })
 })
