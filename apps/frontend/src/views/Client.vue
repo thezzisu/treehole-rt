@@ -65,7 +65,8 @@
             <div class="pt-4">
               <b>Admin Area</b>
               <div class="flex gap-2 py-2">
-                <VBtn text="Export" />
+                <VBtn text="Export" @click="exportData" />
+                <VBtn :text="copyLabel" @click="copyLink" />
               </div>
             </div>
           </template>
@@ -134,5 +135,26 @@ function switchEdit(i: number) {
     editId.value = i
     msg.value = messages.value[i].message
   }
+}
+
+function exportData() {
+  const raw = JSON.stringify(messages.value, null, '\t')
+  const blob = new Blob([raw], { type: 'application/json' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = `chatroom-${chatroomId}.json`
+  a.click()
+}
+
+const copyLabel = ref('Copy Link')
+function copyLink() {
+  const url = new URL(window.location.href)
+  url.searchParams.delete('admin')
+  navigator.clipboard.writeText(url.href)
+  copyLabel.value = 'Copied!'
+  setTimeout(() => {
+    copyLabel.value = 'Copy Link'
+  }, 1000)
 }
 </script>
